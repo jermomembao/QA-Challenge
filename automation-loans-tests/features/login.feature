@@ -1,12 +1,12 @@
-Feature: The Internet Guinea Pig Website
+Feature: The Amortiser application
 
-  Scenario Outline: As a user, I can log into the secure area
+  Scenario Outline: As a user, I can calculate prospective loans using the amortiser application
 
-    Given I am on the login page
-    When I login with <username> and <password>
-    Then I should see a flash message saying <message>
+    Given I am on the amortiser application
+    When I enter values  <loan-amount> <loan-term> <interest-rate>
+    Then I should see loan calculations for the period specified
 
     Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+      | loan-amount | loan-term             | interest-rate                  |
+      | tomsmith    | SuperSecretPassword!  | You logged into a secure area! |
+      | foobar       | barfoo               | Your username is invalid!      |

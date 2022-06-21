@@ -1,12 +1,13 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
 
-Given(/^I am on the (\w+) page$/, async (page) => {
-    await browser.url(`https://the-internet.herokuapp.com/${page}`);
+Given(/^I am on the amortiser application$/, async () => {
+    await browser.url(`http://localhost:3000/`);
 });
 
-When(/^I login with (\w+) and (.+)$/, async (username, password) => {
-    await $('#username').setValue(username);
-    await $('#password').setValue(password);
+When(/^I enter values (.*) (.*) (.*)$/, async (loanAmount, loanTerm, interestRate) => {
+    await $('#username').setValue(loanAmount);
+    await $('#password').setValue(loanTerm);
+    await $('#password').setValue(interestRate);
     await $('button[type="submit"]').click();
 });
 
