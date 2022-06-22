@@ -7,6 +7,6 @@ Feature: The Amortiser application
     Then I should see loan calculations for the period specified
 
     Examples:
-      | loan-amount | loan-term             | interest-rate                  |
-      | tomsmith    | SuperSecretPassword!  | You logged into a secure area! |
-      | foobar       | barfoo               | Your username is invalid!      |
+      | loan-amount | loan-term   | interest-rate|
+      | 100         |  12         | 2 |
+      | 1000        |  24         | 3 |
